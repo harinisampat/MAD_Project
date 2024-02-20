@@ -26,8 +26,8 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.login_page);
 
         homepg_myintent = new Intent(LoginPage.this, HomePage.class);
-        et_mobile = findViewById(R.id.et_mobile);
-        et_pass = findViewById(R.id.et_pass);
+        et_mobile = findViewById(R.id.ln_mobile);
+        et_pass = findViewById(R.id.ln_pass);
         btnlogin = findViewById(R.id.btn_login);
         tv_newuser = findViewById(R.id.tv_newuser);
 
@@ -53,7 +53,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                signup_intent = new Intent(LoginPage.this, SignUp.class);
+                signup_intent = new Intent(LoginPage.this, MobileOtp.class);
                 startActivity(signup_intent);
             }
         });
