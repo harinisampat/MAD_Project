@@ -99,6 +99,7 @@
             android:background="@color/white"
             android:fontFamily="@font/inria_sans"
             android:hint="Enter 4-digit Code"
+            android:inputType="number"
             android:maxLength="4"
             android:paddingLeft="5dp"
             android:textColor="@color/black"
