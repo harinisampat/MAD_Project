@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.graphics.drawable.Drawable;
 import android.*;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,11 +20,15 @@ import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
+import java.util.regex.Pattern;
+
 public class CompleteProfile extends AppCompatActivity {
 
     EditText cp_password;
+    EditText cp_username;
     EditText cp_cnfpassword;
     ImageView password_icon;
+    ImageView eye_icon;
     Intent my_intent;
     Button btn_signup;
 
@@ -35,22 +42,44 @@ public class CompleteProfile extends AppCompatActivity {
         cp_cnfpassword = findViewById(R.id.cp_cnfpassword);
         password_icon = findViewById(R.id.password_icon);
         btn_signup = findViewById(R.id.btn_signup);
+        cp_username = findViewById(R.id.cp_username);
+        eye_icon = findViewById(R.id.eye_icon);
+
+        eye_icon.setImageResource(R.drawable.hide_password);
+        eye_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cp_password.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
+                    cp_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    eye_icon.setImageResource(R.drawable.hide_password);
+                }
+                else {
+                    cp_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    eye_icon.setImageResource(R.drawable.show_password);
+                }
+            }
+        });
 
         btn_signup.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                if (cp_password.getText().toString().equals(cp_cnfpassword.getText().toString()))
-                {
-                    my_intent = new Intent(CompleteProfile.this, HomePage.class );
-                    startActivity(my_intent);
-                    Toast.makeText(getApplicationContext(), "SignUp Complete", Toast.LENGTH_SHORT).show();
-                }
+                if (!cp_username.getText().toString().isEmpty() && !cp_password.getText().toString().isEmpty() && !cp_cnfpassword.getText().toString().isEmpty()) {
+                    if (cp_password.getText().toString().equals(cp_cnfpassword.getText().toString()))
+                    {
+                        my_intent = new Intent(CompleteProfile.this, HomePage.class );
+                        startActivity(my_intent);
+                        Toast.makeText(getApplicationContext(), "SignUp Complete", Toast.LENGTH_SHORT).show();
+                    }
 
-                else
-                {
-                    Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Enter valid credentials", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -95,17 +124,7 @@ public class CompleteProfile extends AppCompatActivity {
 
     private boolean isValidPassword(String password)
     {
-        String passwordPattern = "^(?=.[A-Za-z])(?=.\\d)(?=.[@$!%?&])[A-Za-z\\d@$!%*?&]{6,}$";
-        return password.matches(passwordPattern);
+        Pattern PASSWORD_PATTERN = Pattern.compile("[a-zA-Z0-9\\!\\@\\#\\$]{8,24}");
+        return !TextUtils.isEmpty(password) && PASSWORD_PATTERN.matcher(password).matches();
     }
-
-    // Description:
-    // ^ = denotes beginning symbol
-    //. [] = allows any character before and after the content specified in the bracket (can be digit/alphabet etc) include null
-    // (?=.[A-Za-z]) = checks for atleast 1 alphabet
-    // (?=.\d) = checks for atleast 1 digit
-    // (?=.[@$!%?&]) = check for atleast 1 special character from specified set
-    // [A-Za-z\d@$!%*?&]{6,} = checks that field contains atleast 6 characters including alphabet, digit and special character
-    // {6, } = minimum character is 6, maximum limit is not specified
-    // $ = denotes end of line
 }
