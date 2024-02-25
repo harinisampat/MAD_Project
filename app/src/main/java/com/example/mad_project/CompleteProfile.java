@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
+
 import java.util.regex.Pattern;
 
 public class CompleteProfile extends AppCompatActivity {
@@ -33,6 +35,7 @@ public class CompleteProfile extends AppCompatActivity {
     ImageView cnfeye_icon;
     Intent my_intent;
     Button btn_signup;
+    ImageView signupgif;
 
 
     @Override
@@ -48,6 +51,9 @@ public class CompleteProfile extends AppCompatActivity {
         cp_username = findViewById(R.id.cp_username);
         eye_icon = findViewById(R.id.eye_icon);
         cnfeye_icon = findViewById(R.id.cnfeye_icon);
+        signupgif = findViewById(R.id.signupgif);
+
+        Glide.with(this).load(R.drawable.signupgif).into(signupgif);
 
         eye_icon.setImageResource(R.drawable.hide_password);
         eye_icon.setOnClickListener(new View.OnClickListener() {

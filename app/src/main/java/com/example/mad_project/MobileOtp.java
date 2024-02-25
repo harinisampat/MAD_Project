@@ -8,13 +8,17 @@ import android.*;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 public class MobileOtp extends AppCompatActivity {
 
     EditText txt_otp, sg_mobile;
     Button btn_verify, btn_getotp;
     Intent verify_intent;
+    ImageView otpgif;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,9 @@ public class MobileOtp extends AppCompatActivity {
         txt_otp = findViewById(R.id.sg_otp);
         sg_mobile = findViewById(R.id.sg_mobile);
         btn_getotp = findViewById(R.id.btn_getotp);
+        otpgif = findViewById(R.id.otpgif);
+
+        Glide.with(this).load(R.drawable.otpgif).into(otpgif);
 
         btn_getotp.setOnClickListener(new View.OnClickListener() {
             @Override

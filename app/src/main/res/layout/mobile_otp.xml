@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/blue"
+    android:background="@color/grey"
     tools:context=".MobileOtp">
 
     <ImageView
         android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo_side" />
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:id="@+id/otpgif" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,55 +24,11 @@
         android:textStyle="bold"
         android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"/>
-
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/otpmobile" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/inria_sans"
-        android:text="Mobile Number:"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/sg_mobile"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:background="@color/white"
-        android:fontFamily="@font/inria_sans"
-        android:hint="Enter mobile number"
-        android:inputType="phone"
-        android:maxLength="10"
-        android:paddingLeft="5dp"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/btn_getotp"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#000000"
-        android:text="Get OTP"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:layout_gravity="center"/>
+        android:textColor="@color/black"/>
 
     <LinearLayout
-        android:layout_width="320dp"
-        android:layout_height="170dp"
+        android:layout_width="338dp"
+        android:layout_height="310dp"
         android:orientation="vertical"
         android:background="@drawable/rounded_corner"
         android:layout_marginTop="20dp"
@@ -82,7 +38,33 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/inria_sans"
+            android:text="Mobile Number:"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/sg_mobile"
+            android:layout_width="295dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:fontFamily="@font/inria_sans"
+            android:hint="Enter mobile number"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="4dp"
             android:fontFamily="@font/inria_sans"
@@ -105,16 +87,35 @@
             android:textColor="@color/black"
             android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/btn_verify"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#2A3573"
-            android:text="Verify"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <Button
+                android:id="@+id/btn_getotp"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#000000"
+                android:text="Get OTP"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_verify"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnblue"
+                android:text="Verify"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
