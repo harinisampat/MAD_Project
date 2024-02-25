@@ -7,8 +7,11 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -18,6 +21,8 @@ public class LoginPage extends AppCompatActivity {
     Button btnlogin;
     Intent homepg_myintent;
     Intent signup_intent;
+    //GifImageView logingif;
+    ImageView logingif;
 
 
     @Override
@@ -30,6 +35,9 @@ public class LoginPage extends AppCompatActivity {
         et_pass = findViewById(R.id.ln_pass);
         btnlogin = findViewById(R.id.btn_login);
         tv_newuser = findViewById(R.id.tv_newuser);
+        logingif = findViewById(R.id.logingif);
+
+        Glide.with(this).load(R.drawable.logingif).into(logingif);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
