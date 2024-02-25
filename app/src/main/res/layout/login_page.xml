@@ -28,11 +28,11 @@
         android:layout_marginBottom="40dp"/>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:orientation="vertical"
+        android:layout_width="338dp"
+        android:layout_height="309dp"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/rounded_corner"
-        android:layout_gravity="center" >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,10 +47,9 @@
 
         <EditText
             android:id="@+id/ln_mobile"
-            android:layout_width="265dp"
+            android:layout_width="300dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:background="@color/white"
+            android:layout_marginLeft="15dp"
             android:fontFamily="@font/inria_sans"
             android:hint="Enter mobile number"
             android:inputType="phone"
@@ -72,13 +71,13 @@
 
         <EditText
             android:id="@+id/ln_pass"
-            android:layout_width="265dp"
+            android:layout_width="300dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:background="@color/white"
+            android:layout_marginLeft="15dp"
             android:fontFamily="@font/inria_sans"
             android:hint="Enter password"
-            android:inputType="textPassword"
+            android:inputType="phone"
+            android:maxLength="10"
             android:paddingLeft="5dp"
             android:textColor="@color/black"
             android:textSize="20dp" />
@@ -87,24 +86,24 @@
             android:id="@+id/btn_login"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:backgroundTint="#2A3573"
             android:text="Login"
             android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_gravity="center"/>
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/tv_newuser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New here? Signup now"
-            android:fontFamily="@font/inria_sans"
             android:layout_gravity="center"
-            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/inria_sans"
+            android:text="New here? Signup now"
             android:textColor="@color/black"
-            android:textStyle="italic"
-            android:layout_marginTop="10dp"/>
+            android:textSize="15dp"
+            android:textStyle="italic" />
 
     </LinearLayout>
 </LinearLayout>
