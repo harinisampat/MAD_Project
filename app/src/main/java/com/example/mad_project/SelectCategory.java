@@ -9,16 +9,16 @@ import android.widget.Button;
 
 public class SelectCategory extends AppCompatActivity {
 
-    Button btn_next, btn_next2;
+    Button btn_donfood, btn_doncloth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_category);
 
-        btn_next = findViewById(R.id.btn_next);
-        btn_next2 = findViewById(R.id.btn_next2);
+        btn_donfood = findViewById(R.id.btn_donfood);
+        btn_doncloth = findViewById(R.id.btn_doncloth);
 
-        btn_next.setOnClickListener(new View.OnClickListener()
+        btn_donfood.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -28,7 +28,7 @@ public class SelectCategory extends AppCompatActivity {
             }
         });
 
-        btn_next2.setOnClickListener(new View.OnClickListener()
+        btn_doncloth.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
