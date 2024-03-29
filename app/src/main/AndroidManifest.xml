@@ -34,9 +34,6 @@
             android:name=".SelectNGO"
             android:exported="false" />
         <activity
-            android:name=".test"
-            android:exported="false" />
-        <activity
             android:name=".Otp"
             android:exported="false" />
         <activity

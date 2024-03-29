@@ -8,44 +8,122 @@
     android:orientation="vertical"
     tools:context=".SelectCategory">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="64dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/logo_title" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Category"
-        android:fontFamily="@font/inria_sans"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/black"/>
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/btnblue"
-        android:text="Next"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <ImageButton
+            android:id="@+id/sc_backbtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/backbtn"
+            android:backgroundTint="@color/grey"/>
 
-    <Button
-        android:id="@+id/btn_next2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/btnblue"
-        android:text="Next"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/logo_title" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1720px"
+        android:background="@drawable/upperrounded"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/inria_sans"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donation Category"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/inria_sans"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/inria_sans_light"
+            android:text="Select one of the following categories to proceed with the donation"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/donatefood"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:src="@drawable/donateclothes"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btn_donfood"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:backgroundTint="@color/btnblue"
+                android:text="Food"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/btn_doncloth"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:backgroundTint="@color/btnblue"
+                android:text="Clothes"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="122dp"
+            android:background="@color/white" />
+
+    </LinearLayout>
 
 </LinearLayout>

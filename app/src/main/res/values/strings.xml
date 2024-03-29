@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MAD_Project</string>
+    <string-array name="timeslot">
+        <item>9AM-12PM</item>
+        <item>12PM-3PM</item>
+        <item>3PM-6PM</item>
+    </string-array>
 </resources>
