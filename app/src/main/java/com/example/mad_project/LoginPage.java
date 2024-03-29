@@ -11,6 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.UnderlineSpan;
+
 import com.bumptech.glide.Glide;
 
 public class LoginPage extends AppCompatActivity {
@@ -36,6 +40,16 @@ public class LoginPage extends AppCompatActivity {
         btnlogin = findViewById(R.id.btn_login);
         tv_newuser = findViewById(R.id.tv_newuser);
         logingif = findViewById(R.id.logingif);
+
+        String fullText = "New here? Signup now";
+        SpannableString spannableString = new SpannableString(fullText);
+
+        int startIndex = fullText.indexOf("Signup now");
+        int endIndex = startIndex + "Signup now".length();
+
+        spannableString.setSpan(new UnderlineSpan(), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        tv_newuser.setText(spannableString);
 
         Glide.with(this).load(R.drawable.logingif).into(logingif);
 

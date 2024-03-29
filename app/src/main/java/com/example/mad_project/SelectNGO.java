@@ -1,23 +1,20 @@
 package com.example.mad_project;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-
-public class HomePage extends AppCompatActivity {
+public class SelectNGO extends AppCompatActivity {
 
     Button btn_next;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.select_ngo);
 
         btn_next = findViewById(R.id.btn_next);
 
@@ -26,11 +23,9 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(HomePage.this, SelectNGO.class);
+                Intent intent = new Intent(SelectNGO.this, SelectCategory.class);
                 startActivity(intent);
             }
         });
-
-
     }
 }

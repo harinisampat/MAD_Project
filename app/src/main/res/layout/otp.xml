@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/grey"
-    tools:context=".MobileOtp">
+    tools:context=".Otp">
 
     <ImageView
         android:layout_width="200dp"
@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="OTP Verification"
         android:fontFamily="@font/inria_sans"
         android:textSize="37dp"
         android:textStyle="bold"
@@ -37,12 +37,12 @@
 
         <TextView
             android:layout_width="295dp"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="22dp"
             android:layout_marginTop="35dp"
             android:layout_marginBottom="4dp"
             android:fontFamily="@font/inria_sans_light"
-            android:text="Enter a valid mobile number to receive OTP (One Time Password) for Authentication"
+            android:text="Enter the 6-digit code sent to your mobile number"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18dp" />
@@ -51,51 +51,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="22dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="4dp"
             android:fontFamily="@font/inria_sans"
-            android:text="Mobile Number:"
+            android:text="Enter code:"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/txt_otp"
+            android:layout_width="295dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:fontFamily="@font/inria_sans"
+            android:hint="Enter OTP"
+            android:inputType="number"
+            android:maxLength="6"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_resend"
+            android:layout_width="295dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.hbb20.CountryCodePicker
-                android:id="@+id/ccp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:ccp_showNameCode="false"/>
-
-            <EditText
-                android:id="@+id/sg_mobile"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:background="@color/white"
-                android:fontFamily="@font/inria_sans"
-                android:hint="Enter mobile number"
-                android:inputType="phone"
-                android:paddingLeft="5dp"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-        </LinearLayout>
-
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/inria_sans_light"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
 
         <Button
-            android:id="@+id/btn_getotp"
+            android:id="@+id/btn_verify"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/btnblue"
-            android:text="Get OTP"
+            android:text="Verify"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
