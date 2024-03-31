@@ -34,7 +34,7 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
-        homepg_myintent = new Intent(LoginPage.this, HomePage.class);
+        homepg_myintent = new Intent(LoginPage.this, HomePageMap.class);
         et_mobile = findViewById(R.id.ln_mobile);
         et_pass = findViewById(R.id.ln_pass);
         btnlogin = findViewById(R.id.btn_login);

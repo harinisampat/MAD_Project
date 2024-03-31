@@ -8,33 +8,344 @@
     android:orientation="vertical"
     tools:context=".SelectClothes">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="64dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/logo_title" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Clothes"
-        android:fontFamily="@font/inria_sans"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/black"/>
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/btnblue"
-        android:text="Next"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <ImageButton
+            android:id="@+id/ds_backbtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/backbtn"
+            android:backgroundTint="@color/grey"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/logo_title" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:background="@drawable/upperrounded"
+        android:backgroundTint="#E3C7C7"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/inria_sans"
+            android:text="Select Clothes"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/inria_sans_light"
+            android:text="Select the quantity of items to be donated"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+
+        <TableLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inria_sans"
+                android:text="Gender:"
+                android:textColor="@color/black"
+                android:textSize="20dp"/>
+
+            <CheckBox
+                android:id="@+id/cb_male"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:layout_column="1"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/cb_female"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:layout_column="2"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Age Group:"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inria_sans"
+                    android:textSize="20dp"/>
+
+                <Spinner
+                    android:id="@+id/spin_age"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:textSize="22dp"
+                    android:layout_span="2"
+                    android:fontFamily="@font/inria_sans"
+                    android:background="@drawable/textborder"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:entries="@array/agegroup"/>
+
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+
+        <TableRow>
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_height="100dp"
+                android:src="@drawable/tshirt"
+                android:padding="10dp"/>
+
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_height="100dp"
+                android:src="@drawable/pant" />
+
+        </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/inria_sans"
+                    android:text="T-Shirt/Shirt"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/inria_sans"
+                    android:text="Pants"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btn_minus1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/minus"
+                        android:scaleType="fitCenter"
+                        android:background="@color/btngrey"
+                        android:padding="5dp" />
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:fontFamily="@font/inria_sans_light"
+                        android:textColor="@color/black"
+                        android:text="0"
+                        android:gravity="center"
+                        android:textSize="25dp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_plus1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/plus"
+                        android:scaleType="fitCenter"
+                        android:background="@color/btngrey"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btn_minus2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/minus"
+                        android:scaleType="fitCenter"
+                        android:background="@color/btngrey"
+                        android:padding="5dp" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:fontFamily="@font/inria_sans_light"
+                        android:textColor="@color/black"
+                        android:text="0"
+                        android:gravity="center"
+                        android:textSize="25dp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_plus2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/plus"
+                        android:scaleType="fitCenter"
+                        android:background="@color/btngrey"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Other items:"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inria_sans"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="20dp"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <Spinner
+                    android:id="@+id/spin_other"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:textSize="22dp"
+                    android:layout_span="2"
+                    android:fontFamily="@font/inria_sans"
+                    android:background="@drawable/textborder"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:entries="@array/other"/>
+
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btn_minus3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/minus"
+                        android:scaleType="fitCenter"
+                        android:background="@color/btngrey"
+                        android:padding="5dp" />
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:fontFamily="@font/inria_sans_light"
+                        android:textColor="@color/black"
+                        android:text="0"
+                        android:gravity="center"
+                        android:textSize="25dp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_plus3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/plus"
+                        android:scaleType="fitCenter"
+                        android:background="@color/btngrey"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+
+
+
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/btnblue"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white" />
+
+    </LinearLayout>
 
 </LinearLayout>

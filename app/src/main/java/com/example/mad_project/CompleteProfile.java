@@ -93,7 +93,7 @@ public class CompleteProfile extends AppCompatActivity {
                 if (!cp_username.getText().toString().isEmpty() && !cp_password.getText().toString().isEmpty() && !cp_cnfpassword.getText().toString().isEmpty()) {
                     if (cp_password.getText().toString().equals(cp_cnfpassword.getText().toString()))
                     {
-                        my_intent = new Intent(CompleteProfile.this, HomePage.class );
+                        my_intent = new Intent(CompleteProfile.this, HomePageMap.class );
                         startActivity(my_intent);
                         Toast.makeText(getApplicationContext(), "SignUp Complete", Toast.LENGTH_SHORT).show();
                     }

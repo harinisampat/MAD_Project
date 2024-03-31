@@ -5,4 +5,20 @@
         <item>12PM-3PM</item>
         <item>3PM-6PM</item>
     </string-array>
+
+    <string-array name="agegroup">
+        <item>Select Age Group</item>
+        <item>5-12 years</item>
+        <item>13-19 years</item>
+        <item>20-40 years</item>
+        <item>41-65 years</item>
+    </string-array>
+
+    <string-array name="other">
+        <item>Select Item</item>
+        <item>Blankets</item>
+        <item>Jackets</item>
+        <item>Sarees</item>
+    </string-array>
+    <string name="title_activity_home_page_map">HomePageMap</string>
 </resources>
