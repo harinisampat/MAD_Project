@@ -8,33 +8,206 @@
     android:orientation="vertical"
     tools:context=".SelectNGO">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="64dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/logo_title" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select NGO"
-        android:fontFamily="@font/inria_sans"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/black"/>
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/btnblue"
-        android:text="Next"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <ImageButton
+            android:id="@+id/ds_backbtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/backbtn"
+            android:backgroundTint="@color/grey"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/logo_title" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_corner"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select NGO for Donation"
+            android:fontFamily="@font/inria_sans"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"/>
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="335dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rv1" >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="50dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo3" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo4" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo5" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo6" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo7" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/arrow_next"
+                            android:padding="6dp"
+                            android:background="@color/green"
+                            android:layout_marginTop="45dp"
+                            android:layout_marginBottom="50dp"
+                            android:id="@+id/btnngo8" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
 
 </LinearLayout>
