@@ -73,7 +73,7 @@ public class HomePageMap extends FragmentActivity implements OnMapReadyCallback 
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(HomePageMap.this, SelectCategory.class);
+                Intent intent = new Intent(HomePageMap.this, SelectNGO.class);
                 startActivity(intent);
             }
         });
