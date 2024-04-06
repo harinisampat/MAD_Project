@@ -16,12 +16,12 @@ import android.text.Spanned;
 import android.text.style.UnderlineSpan;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginPage extends AppCompatActivity {
 
     TextView tv_newuser;
-    EditText et_mobile;
-    EditText et_pass;
+    EditText ln_mobile, ln_pass;
     Button btnlogin;
     Intent homepg_myintent;
     Intent signup_intent;
@@ -35,8 +35,8 @@ public class LoginPage extends AppCompatActivity {
         setContentView(R.layout.login_page);
 
         homepg_myintent = new Intent(LoginPage.this, HomePageMap.class);
-        et_mobile = findViewById(R.id.ln_mobile);
-        et_pass = findViewById(R.id.ln_pass);
+        ln_mobile = findViewById(R.id.ln_mobile);
+        ln_pass = findViewById(R.id.ln_pass);
         btnlogin = findViewById(R.id.btn_login);
         tv_newuser = findViewById(R.id.tv_newuser);
         logingif = findViewById(R.id.logingif);
@@ -57,9 +57,10 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                if ( et_mobile.getText().toString().equals("1234567890") && et_pass.getText().toString().equals("pass1"))
+                if ( ln_mobile.getText().toString().equals("1234567890") && ln_pass.getText().toString().equals("pass1"))
                 {
                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+                    String mobile = ln_mobile.getText().toString();
                     startActivity(homepg_myintent);
                 }
 

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.*;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SelectFood extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class SelectFood extends AppCompatActivity {
     int biscuit_count = 0;
     int juice_count = 0;
     int chips_count = 0;
+    ImageButton backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,18 @@ public class SelectFood extends AppCompatActivity {
         tv2 = findViewById(R.id.tv2);
         tv3 = findViewById(R.id.tv3);
         tv4 = findViewById(R.id.tv4);
+
+        backbtn = findViewById(R.id.ds_backbtn);
+
+        backbtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent btn_intent = new Intent(SelectFood.this, SelectCategory.class);
+                startActivity(btn_intent);
+            }
+        });
 
         //Water
         plus1.setOnClickListener(new View.OnClickListener()
@@ -150,8 +164,20 @@ public class SelectFood extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(SelectFood.this, DeliverySlot.class);
-                startActivity(intent);
+                if (water_count!=0 || juice_count!=0 || biscuit_count!=0 || chips_count!=0)
+                {
+                    Intent intent = new Intent(SelectFood.this, DeliverySlot.class);
+                    intent.putExtra("Water", water_count);
+                    intent.putExtra("Chips", chips_count);
+                    intent.putExtra("Juice", juice_count);
+                    intent.putExtra("Biscuit",biscuit_count);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(SelectFood.this, "Please select quantity", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

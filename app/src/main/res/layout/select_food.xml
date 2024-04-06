@@ -307,11 +307,7 @@
             android:textColor="@color/white"
             android:textSize="20dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="28dp"
-            android:background="@color/white" />
+
 
     </LinearLayout>
 

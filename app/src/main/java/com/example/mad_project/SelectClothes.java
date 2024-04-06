@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.load.ImageHeaderParser;
+
 public class SelectClothes extends AppCompatActivity {
 
     ImageButton minus1, minus2, minus3;
@@ -26,6 +28,9 @@ public class SelectClothes extends AppCompatActivity {
     int tshirt_count = 0;
     int pant_count = 0;
     int other_count = 0;
+    TextView tv_sample;
+    ImageButton backbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,17 @@ public class SelectClothes extends AppCompatActivity {
         tv2 = findViewById(R.id.tv2);
         tv3 = findViewById(R.id.tv3);
 
+        backbtn = findViewById(R.id.ds_backbtn);
+
+        backbtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent btn_intent = new Intent(SelectClothes.this, SelectCategory.class);
+                startActivity(btn_intent);
+            }
+        });
         //Tshirt
         plus1.setOnClickListener(new View.OnClickListener()
         {
@@ -186,13 +202,34 @@ public class SelectClothes extends AppCompatActivity {
             }
         });
 
+
+
         btn_next.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(SelectClothes.this, DeliverySlot.class);
-                startActivity(intent);
+                if (cb_female.isChecked() || cb_male.isChecked())
+                {
+                    if (tshirt_count!=0 || pant_count!=0 || other_count!=0)
+                    {
+                        Intent intent = new Intent(SelectClothes.this, DeliverySlot.class);
+                        intent.putExtra("Tshirt", tshirt_count);
+                        intent.putExtra("Pant", pant_count);
+                        intent.putExtra("Others", other_count);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(SelectClothes.this, "Please select quantity", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+                else
+                {
+                    Toast.makeText(SelectClothes.this, "Please select gender", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

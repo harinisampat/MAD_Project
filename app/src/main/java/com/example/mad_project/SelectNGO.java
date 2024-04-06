@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.*;
 public class SelectNGO extends AppCompatActivity {
 
     ImageButton btnngo1, btnngo2, btnngo3, btnngo4, btnngo5, btnngo6, btnngo7, btnngo8;
+    ImageButton backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,20 @@ public class SelectNGO extends AppCompatActivity {
         setContentView(R.layout.select_ngo);
 
         RecyclerView recyclerView = findViewById(R.id.rv1);
+        backbtn = findViewById(R.id.ds_backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent btn_intent = new Intent(SelectNGO.this, HomePageMap.class);
+                startActivity(btn_intent);
+            }
+        });
+
         ArrayList<NgoModel> objectList = new ArrayList<NgoModel>();
         objectList.add(new NgoModel("Udaan India Foundation", R.drawable.udaan,"NGO", "Vikhroli", "9967885468", "udaan.com "));
-        objectList.add(new NgoModel("Punarvas Special School", R.drawable.punarvas, "School for Handicap", "Goregaon", "2247491799", "punarvasschool.org"));
+        objectList.add(new NgoModel("Punarvas Special School", R.drawable.punarvas, "School for Handicapped", "Goregaon", "2247491799", "punarvasschool.org"));
         objectList.add(new NgoModel("Yuva Foundation", R.drawable.yuva, "NGO", "Malad", "9004089999", "yuvafoundation.net"));
         objectList.add(new NgoModel("Smile Foundation", R.drawable.smile, "NGO", "Vile Parle", "2226104106", "smilefoundation.com"));
         objectList.add(new NgoModel("BHN Senior Living Center", R.drawable.bhn, "Old Age Home", "Andheri", "7045464010", "bhnhealthcare.com"));
